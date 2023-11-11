@@ -171,9 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 6
-  m_YDamping: 6
-  m_ZDamping: 6
+  m_XDamping: 3
+  m_YDamping: 3
+  m_ZDamping: 3
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -332,12 +332,28 @@ PrefabInstance:
       value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: zoomOutDur
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: powerMultiplier
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: outAnimCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: outAnimCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: outAnimCurve.m_Curve.Array.data[1].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -564,10 +580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945104b246e4bb44fab40e3a27fdfd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 453042021251308449, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
+  enemyPrefabs: []
   numberOfEnemies: 5
-  spawnRadius: 35
+  spawnRadius: 10
 --- !u!1 &2104561275
 GameObject:
   m_ObjectHideFlags: 0
