@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 
 public class ShootingController : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class ShootingController : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
+    [SerializeField]
+     CinemachineVirtualCamera virtualCamera;
+
+
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
     }
@@ -34,6 +39,8 @@ public class ShootingController : MonoBehaviour
         } else if (Input.GetKey(KeyCode.Space)) {
             if (power < maxPower) {
                 power += powerMultiplier * Time.deltaTime;
+                updateZoom(power);
+
             } else {
                 power = maxPower;
             }
@@ -42,6 +49,12 @@ public class ShootingController : MonoBehaviour
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
             power = 0;
+            updateZoom(power);
         }
+    }
+
+    void updateZoom(float power)
+    {
+        virtualCamera.m_Lens.OrthographicSize = 7.52f -  power / maxPower;
     }
 }
