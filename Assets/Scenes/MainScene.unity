@@ -663,11 +663,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9180073818280262371, guid: 24bec168086cb904d8519568060a0a98, type: 3}
       propertyPath: maxPower
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 9180073818280262371, guid: 24bec168086cb904d8519568060a0a98, type: 3}
       propertyPath: powerMultiplier
-      value: 200
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
