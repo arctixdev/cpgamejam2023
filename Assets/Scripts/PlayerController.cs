@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
         // Movement
         if (Input.GetKey(KeyCode.W)) {
             playerRigidbody.AddForce(transform.up * playerSpeed * Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.A)) {
+        } if (Input.GetKey(KeyCode.A)) {
             playerRigidbody.AddForce(-transform.right * playerSpeed * Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.D)) {
+        } if (Input.GetKey(KeyCode.D)) {
             playerRigidbody.AddForce(transform.right * playerSpeed * Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.S)) {
+        } if (Input.GetKey(KeyCode.S)) {
             playerRigidbody.AddForce(-transform.up * playerSpeed * Time.deltaTime);
         }
 
