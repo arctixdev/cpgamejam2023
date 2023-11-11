@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 0, y: 0, z: -22.5}
   m_XDamping: 2
   m_YDamping: 2
   m_ZDamping: 2
@@ -906,8 +906,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 1, b: 1, a: 0}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -5494,7 +5494,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 838443711}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 37.38
     OrthographicSize: 7.52
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -5521,7 +5521,11 @@ Transform:
   m_GameObject: {fileID: 1309877421}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -55.08, y: 1.21, z: -10}
+=======
+  m_LocalPosition: {x: -45, y: 0, z: -22.5}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5719,8 +5723,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 37.38
+  orthographic: 0
   orthographic size: 7.52
   m_Depth: -1
   m_CullingMask:
@@ -5746,7 +5750,11 @@ Transform:
   m_GameObject: {fileID: 2104561275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -55.08, y: 1.21, z: -10}
+=======
+  m_LocalPosition: {x: -45, y: 0, z: -22.5}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
