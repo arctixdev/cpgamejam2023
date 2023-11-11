@@ -33,6 +33,9 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private float zoomOutDur;
 
+    [SerializeField]
+    private AnimationCurve outAnimCurve;
+
 
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
@@ -42,7 +45,7 @@ public class ShootingController : MonoBehaviour
     {
         if (timer < zoomOutDur)
         {
-            timer += Time.deltaTime;
+            timer -= Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -62,10 +65,10 @@ public class ShootingController : MonoBehaviour
             power = 0;
             updateZoom(power);
 
-            timer = 0;
+            timer = power / maxPower;
         } else
         {
-            updateZoom(1 - (timer / zoomOutDur));
+            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
 
 
