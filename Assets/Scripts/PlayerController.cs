@@ -6,13 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     public int playerSpeed = 400;
     public Rigidbody2D playerRigidbody;
+    private Animator ShipAnimator;
 
+    private void Start()
+    {
+        ShipAnimator = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
         // Movement
         if (Input.GetKey(KeyCode.W)) {
             playerRigidbody.AddForce(transform.up * playerSpeed * Time.deltaTime);
+            ShipAnimator.SetTrigger("StartButton");
+            ShipAnimator.SetBool("IsActive", true);
         } if (Input.GetKey(KeyCode.A)) {
             playerRigidbody.AddForce(-transform.right * playerSpeed * Time.deltaTime);
         } if (Input.GetKey(KeyCode.D)) {
