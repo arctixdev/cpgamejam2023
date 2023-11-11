@@ -10,6 +10,24 @@ public class Rotate : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private bool randomRotationSpeed;
+
+    [SerializeField]
+    private float maxSpeed = 10;
+
+
+    [SerializeField]
+    private float minSpeed = 7;
+
+    private void Start()
+    {
+        if(randomRotationSpeed)
+        {
+            speed = Random.Range(minSpeed, maxSpeed);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
