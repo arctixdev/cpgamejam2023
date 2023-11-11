@@ -69,7 +69,7 @@ public class ShootingController : MonoBehaviour
 
         } else
         {
-            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur))
+            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
 
 
