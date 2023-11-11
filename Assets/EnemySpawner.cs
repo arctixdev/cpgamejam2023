@@ -28,10 +28,10 @@ public class EnemySpawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(x, y, 0f) + transform.position;
 
             // Randomly select an enemy prefab from the array
-            GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+            //GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
 
             // Instantiate the selected enemy prefab at the random position
-            GameObject newEnemy = Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
+            //GameObject newEnemy = Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
 
             // Optionally, you can set up additional configurations for the spawned enemy here
             // For example, you might want to set a parent for organization or apply other properties.

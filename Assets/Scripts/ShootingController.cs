@@ -28,6 +28,7 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
      CinemachineVirtualCamera virtualCamera;
 
+    [SerializeField]
     float timer = 0;
 
     [SerializeField]
@@ -43,7 +44,7 @@ public class ShootingController : MonoBehaviour
 
     void Update()
     {
-        if (timer < zoomOutDur)
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
@@ -62,13 +63,13 @@ public class ShootingController : MonoBehaviour
             var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
+            timer = power / maxPower * zoomOutDur;
             power = 0;
-            updateZoom(power);
+ 
 
-            timer = power / maxPower;
         } else
         {
-            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
+            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur))
         }
 
 
