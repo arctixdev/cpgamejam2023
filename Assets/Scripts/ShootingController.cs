@@ -47,6 +47,8 @@ public class ShootingController : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
+        } else if (timer < 0) { 
+            timer = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -67,7 +69,7 @@ public class ShootingController : MonoBehaviour
             power = 0;
  
 
-        } else
+        } else if(timer >= 0) 
         {
             updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
