@@ -15,9 +15,17 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            // Calculate a random position within the spawn radius
-            Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
-            Vector3 spawnPosition = new Vector3(randomPos.x, 0f, randomPos.y) + transform.position;
+            // Calculate a random angle
+            float angle = Random.Range(0f, 360f);
+
+            // Convert angle to radians
+            float angleInRadians = angle * Mathf.Deg2Rad;
+
+            // Calculate spawn position within a circle
+            float x = spawnRadius * Mathf.Cos(angleInRadians);
+            float y = spawnRadius * Mathf.Sin(angleInRadians);
+
+            Vector3 spawnPosition = new Vector3(x, y, 0f) + transform.position;
 
             // Randomly select an enemy prefab from the array
             GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
