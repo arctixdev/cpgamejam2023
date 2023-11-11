@@ -24,6 +24,8 @@ public class astroidSpawner : MonoBehaviour
     private int astroidAmount;
     [SerializeField]
     private bool shouldGenerateAstroidField = true;
+    [SerializeField]
+    private float minAstroidSize, maxAstroidSize;
 
     //[HideInInspector]
     public List<GameObject> spawnedAstroids = new List<GameObject>();
@@ -33,6 +35,7 @@ public class astroidSpawner : MonoBehaviour
     void Start()
     {
         //generateAstroidField(minSpawnDistance, maxSpawnDistance, astroidSpawnPosition.position, astroidPrefabs);
+        if(minAstroidSize>maxAstroidSize) minAstroidSize = maxAstroidSize;
     }
 
     //private int mf(float f)
@@ -89,7 +92,9 @@ public class astroidSpawner : MonoBehaviour
             Debug.Log(getPerlinValFloat);
             int getPerlinVal = r(getPerlinValFloat);
             Debug.Log(getPerlinVal);
-            spawnedAstroids.Add(Instantiate(astroidPrefabs[getPerlinVal], pos, qu, astroidSpawnPosition));
+            GameObject go = Instantiate(astroidPrefabs[getPerlinVal], pos, qu, astroidSpawnPosition);
+            go.transform.localScale = Vector3.one*UnityEngine.Random.Range(minAstroidSize,maxAstroidSize);
+            spawnedAstroids.Add(go);
         }
         return true;
     }
