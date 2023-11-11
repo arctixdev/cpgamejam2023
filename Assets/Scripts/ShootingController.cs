@@ -17,6 +17,9 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private int powerMultiplier = 100;
 
+    [SerializeField]
+    private Transform spawnLocation;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -28,7 +31,7 @@ public class ShootingController : MonoBehaviour
                 power = maxPower;
             }
         } else if (Input.GetKeyUp(KeyCode.Space)) {
-            var spawnedProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+            var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.up * power);
             power = 0;
