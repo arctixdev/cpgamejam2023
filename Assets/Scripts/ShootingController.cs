@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootingController : MonoBehaviour
@@ -20,6 +21,12 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private Transform spawnLocation;
 
+    private Rigidbody2D playerRb;
+
+    void Start() {
+        playerRb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -33,7 +40,7 @@ public class ShootingController : MonoBehaviour
         } else if (Input.GetKeyUp(KeyCode.Space)) {
             var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.up * power);
+            rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
             power = 0;
         }
     }
