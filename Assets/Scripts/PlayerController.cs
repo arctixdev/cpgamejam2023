@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         } if (Input.GetKey(KeyCode.S)) {
             playerRigidbody.AddForce(-transform.up * playerSpeed * Time.deltaTime);
         }
-
+        
 		//rotation
 		Vector3 mousePos = Input.mousePosition;
 
