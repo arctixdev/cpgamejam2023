@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
+using UnityEditor;
 
 public class ShootingController : MonoBehaviour
 {
@@ -23,17 +25,39 @@ public class ShootingController : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
+    [SerializeField]
+     CinemachineVirtualCamera virtualCamera;
+
+    [SerializeField]
+    float timer = 0;
+
+    [SerializeField]
+    private float zoomOutDur;
+
+    [SerializeField]
+    private AnimationCurve outAnimCurve;
+
+
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        } else if (timer < 0) { 
+            timer = 0;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space)) {
             power = 0;
         } else if (Input.GetKey(KeyCode.Space)) {
             if (power < maxPower) {
                 power += powerMultiplier * Time.deltaTime;
+                updateZoom(power / maxPower);
+
             } else {
                 power = maxPower;
             }
@@ -41,7 +65,22 @@ public class ShootingController : MonoBehaviour
             var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
+            timer = power / maxPower * zoomOutDur;
             power = 0;
+ 
+
+        } else if(timer >= 0) 
+        {
+            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
+
+
+
+
+    }
+
+    void updateZoom(float zoomProgress)
+    {
+        virtualCamera.m_Lens.OrthographicSize = 7.52f - zoomProgress;
     }
 }

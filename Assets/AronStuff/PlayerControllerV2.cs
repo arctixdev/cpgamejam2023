@@ -2,32 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerV2 : MonoBehaviour
 {
     public int playerSpeed = 400;
     public Rigidbody2D playerRigidbody;
-    private Animator ShipAnimator;
 
-    private void Start()
-    {
-        ShipAnimator = GetComponent<Animator>();
-    }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Movement
         if (Input.GetKey(KeyCode.W)) {
-            playerRigidbody.AddForce(transform.up * playerSpeed * Time.deltaTime);
-            ShipAnimator.SetTrigger("StartButton");
-            ShipAnimator.SetBool("IsActive", true);
+            playerRigidbody.AddForce(transform.up * playerSpeed);
         } if (Input.GetKey(KeyCode.A)) {
-            playerRigidbody.AddForce(-transform.right * playerSpeed * Time.deltaTime);
+            playerRigidbody.AddForce(-transform.right * playerSpeed);
         } if (Input.GetKey(KeyCode.D)) {
-            playerRigidbody.AddForce(transform.right * playerSpeed * Time.deltaTime);
+            playerRigidbody.AddForce(transform.right * playerSpeed);
         } if (Input.GetKey(KeyCode.S)) {
-            playerRigidbody.AddForce(-transform.up * playerSpeed * Time.deltaTime);
+            playerRigidbody.AddForce(-transform.up * playerSpeed);
         }
-        
+
 		//rotation
 		Vector3 mousePos = Input.mousePosition;
 
