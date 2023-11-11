@@ -37,9 +37,18 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private AnimationCurve outAnimCurve;
 
+    [SerializeField]
+    private float zoomPower;
+
+    private float startFOV;
+
+
+
 
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
+
+        startFOV = virtualCamera.m_Lens.FieldOfView;
     }
 
     void Update()
@@ -64,7 +73,8 @@ public class ShootingController : MonoBehaviour
         } else if (Input.GetKeyUp(KeyCode.Space)) {
             var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
             var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
+            rb.velocity = playerRb.velocity;
+            rb.AddForce(transform.up.ConvertTo<Vector2>() * power);
             timer = power / maxPower * zoomOutDur;
             power = 0;
  
@@ -81,6 +91,6 @@ public class ShootingController : MonoBehaviour
 
     void updateZoom(float zoomProgress)
     {
-        virtualCamera.m_Lens.OrthographicSize = 7.52f - zoomProgress;
+        virtualCamera.m_Lens.FieldOfView = startFOV - zoomProgress * zoomPower;
     }
 }
