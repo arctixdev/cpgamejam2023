@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &45431048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 36574606317791785, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-  m_PrefabInstance: {fileID: 826009616}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240039318
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,40 +581,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: maxPower
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: zoomOutDur
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: powerMultiplier
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: outAnimCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: outAnimCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      propertyPath: outAnimCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: deadAstronautsRect
+      value: 
+      objectReference: {fileID: 566916335}
+    - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: aliveAstronautsRect
+      value: 
+      objectReference: {fileID: 240039319}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 36574606317791785, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 838443719}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
 --- !u!4 &838443711 stripped
 Transform:
@@ -5539,7 +5515,6 @@ GameObject:
   - component: {fileID: 1433202814}
   - component: {fileID: 1433202813}
   - component: {fileID: 1433202815}
-  - component: {fileID: 1433202816}
   m_Layer: 0
   m_Name: FinalBossCirkle
   m_TagString: Untagged
@@ -5751,6 +5726,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1252824993}
+  - {fileID: 493476684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2104561279
@@ -5796,4 +5772,3 @@ SceneRoots:
   - {fileID: 826009616}
   - {fileID: 478782912}
   - {fileID: 1309877423}
-  - {fileID: 1719639859}
