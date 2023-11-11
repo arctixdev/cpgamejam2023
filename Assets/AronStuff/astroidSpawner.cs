@@ -48,7 +48,7 @@ public class astroidSpawner : MonoBehaviour
     //}
     private int r(float f)
     {
-        return (int)math.round(f);
+        return (int)math.floor(f);
     }
 
     private float shrinkToFit(float f,float f2)
@@ -88,11 +88,7 @@ public class astroidSpawner : MonoBehaviour
                 dis = math.distance(pos, new Vector2(spawnPosition.x, spawnPosition.y));
             }
             quaternion qu = quaternion.EulerZXY(0, 0, UnityEngine.Random.Range(-180, 180));
-            float getPerlinValFloat = Mathf.PerlinNoise(pos.x*perlinSpacing,pos.y*perlinSpacing) * (astroidPrefabs.Length-1);
-            //Debug.Log(getPerlinValFloat);
-            int getPerlinVal = r(getPerlinValFloat);
-            Debug.Log(getPerlinVal);
-            GameObject go = Instantiate(astroidPrefabs[getPerlinVal], pos, qu, astroidSpawnPosition);
+            GameObject go = Instantiate(astroidPrefabs[UnityEngine.Random.Range(0,astroidPrefabs.Length)], pos, qu, astroidSpawnPosition);
             go.transform.localScale = Vector3.one*UnityEngine.Random.Range(minAstroidSize,maxAstroidSize);
             spawnedAstroids.Add(go);
         }
