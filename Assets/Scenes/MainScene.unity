@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &478782910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478782912}
+  - component: {fileID: 478782911}
+  m_Layer: 0
+  m_Name: Asteroidspawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &478782911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478782910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877e22fad116bff4a858fc843e4aa3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astroidSpawnPosition: {fileID: 478782912}
+  minSpawnDistance: 50
+  maxSpawnDistance: 80
+  perlinSpacing: 0
+  astroidPrefabs:
+  - {fileID: 3594712772581845541, guid: bffef33c4b8f4fd498ac3c1bdcd5b9b9, type: 3}
+  - {fileID: 6128328285263633891, guid: ce791c9b2304cde4f96068bd76dfa1b4, type: 3}
+  - {fileID: 5968556249594738782, guid: 91717a8004a9a9545b707173269f4e3c, type: 3}
+  astroidAmount: 800
+  shouldGenerateAstroidField: 1
+  minAstroidSize: 0.5
+  maxAstroidSize: 3
+  spawnedAstroids: []
+--- !u!4 &478782912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478782910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296825957
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,3 +638,4 @@ SceneRoots:
   - {fileID: 2104561278}
   - {fileID: 1433202814}
   - {fileID: 1723390069}
+  - {fileID: 478782912}

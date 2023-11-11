@@ -89,7 +89,7 @@ public class astroidSpawner : MonoBehaviour
             }
             quaternion qu = quaternion.EulerZXY(0, 0, UnityEngine.Random.Range(-180, 180));
             float getPerlinValFloat = Mathf.PerlinNoise(pos.x*perlinSpacing,pos.y*perlinSpacing) * (astroidPrefabs.Length-1);
-            Debug.Log(getPerlinValFloat);
+            //Debug.Log(getPerlinValFloat);
             int getPerlinVal = r(getPerlinValFloat);
             Debug.Log(getPerlinVal);
             GameObject go = Instantiate(astroidPrefabs[getPerlinVal], pos, qu, astroidSpawnPosition);
@@ -130,6 +130,7 @@ public class astroidSpawner : MonoBehaviour
             spawnedAstroids.Clear();
             generateAstroidField(minSpawnDistance, maxSpawnDistance, astroidSpawnPosition.position, astroidPrefabs);
             shouldGenerateAstroidField = false;
+            Debug.Log("generating new astroid field");
         }
     }
 }
