@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class singleFaseMonsterGeneration : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     ModyfiedEnemySpawner mES;
     [SerializeField]
     private Transform parrent;
+    [SerializeField]
+    private GameObject loadNextScene;
     float timer;
 
     public Queue<(float, GameObject[])> timeLine;
@@ -29,13 +32,22 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             Debug.Log(gm.Length);
             Debug.Log(gm);
             if (!mES) mES = ModyfiedEnemySpawner.Instance;
-            mES.SpawnEnemies(gm, (0.5f, 3f), parrent);
+            mES.SpawnEnemies(gm, (1f - (curDiffuculty / 3), 3f - (curDiffuculty / 3)), parrent);
+        }
+        if(transform.childCount < 1 && timer > 40)
+        {
+            SceneManager.LoadScene("UpgradeScene");
         }
     }
-
+    int curDiffuculty;
+    float curBaseEnemySpawnTime;
+    float curMaxTime;
     public void initiateFase(int diffuculty, float baseEnemySpawnTime, float maxTime)
     {
         timer = 0;
+        curDiffuculty = diffuculty;
+        curBaseEnemySpawnTime = baseEnemySpawnTime;
+        curMaxTime = maxTime;
         List<(float, GameObject[])> ls = new List<(float, GameObject[])>();
         for (int i = 0; i < diffuculty*5; i++)
         {
@@ -48,6 +60,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
                 else return 0;
             });
             timeLine = new Queue<(float, GameObject[])>(ls);
+            timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
         }
     }
 
