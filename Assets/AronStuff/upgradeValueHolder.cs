@@ -33,10 +33,18 @@ public class upgradeValueHolder : MonoBehaviour
     public List<upgrade> upgrades = new List<upgrade>();
 
     public event Action<upgrade> upgradeChanged;
-    // Start is called before the first frame update
-    void Start()
+
+    void init()
     {
         instance = this;
+    }
+    private void Awake()
+    {
+        init();
+    }
+    void Start()
+    {
+        init();
         
         upgrades.Add(
         new upgrade
