@@ -63,26 +63,26 @@ public class upgradeValueHolder : MonoBehaviour
     {
         init();
         
-        upgrades.Add(
-        new upgrade
-        {
-            type = upgradeEnums.speedUpgrade,
-            ingameName = "speed upgrade mk1",
-            ingameDescription = "increases your movement speed",
-            modifyerType = upgradeEffect.multiply,
-            effectValue = 0.1f,
-            id = 1
-        });
-        upgrades.Add(
-        new upgrade
-        {
-            type = upgradeEnums.speedUpgrade,
-            ingameName = "speed upgrade mk2",
-            ingameDescription = "increases your movement speed",
-            modifyerType = upgradeEffect.multiply,
-            effectValue = 0.25f,
-            id = 2
-        });
+        //upgrades.Add(
+        //new upgrade
+        //{
+        //    type = upgradeEnums.speedUpgrade,
+        //    ingameName = "speed upgrade mk1",
+        //    ingameDescription = "increases your movement speed",
+        //    modifyerType = upgradeEffect.multiply,
+        //    effectValue = 0.1f,
+        //    id = 1
+        //});
+        //upgrades.Add(
+        //new upgrade
+        //{
+        //    type = upgradeEnums.speedUpgrade,
+        //    ingameName = "speed upgrade mk2",
+        //    ingameDescription = "increases your movement speed",
+        //    modifyerType = upgradeEffect.multiply,
+        //    effectValue = 0.25f,
+        //    id = 2
+        //});
     }
 
     // Update is called once per frame

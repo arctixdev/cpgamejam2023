@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157f00804289047648ed2ff30aab4945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePlayerSpeed: 400
+  basePlayerSpeed: 600
   playerSpeedAdditionModifyer: 0
   playerSpeedMultiplyerModifyer: 1
   playerRigidbody: {fileID: 4344117922245288269}
@@ -128,8 +128,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
-  m_AngularDrag: 0.5
+  m_LinearDrag: 2
+  m_AngularDrag: 0.8
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -157,9 +157,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1350196579972173189, guid: 581164eefb908c74f9bfa8317ba33cab, type: 3}
   audioShooting: {fileID: 3706285576239195261}
   shootingClip: {fileID: 8300000, guid: d2ab20019e5f1c34db49b211850acc37, type: 3}
+  chargingSource: {fileID: 3580833175537025277}
   power: 0
-  maxBasePower: 600
-  chargeupSpeed: 883
+  maxBasePower: 700
+  chargeupSpeed: 1000
   spawnLocation: {fileID: 4896697653015487296}
   virtualCamera: {fileID: 0}
   timer: 0
@@ -440,7 +441,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36574606317791785}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2ab20019e5f1c34db49b211850acc37, type: 3}
@@ -547,6 +548,7 @@ MonoBehaviour:
   astroidAttackPower: 0.009
   playerDMG: {fileID: 0}
   DMG: {fileID: 0}
+  ASTDMG: {fileID: 0}
   enemyAttackPower: 0.2
 --- !u!114 &1541891289783572011
 MonoBehaviour:
@@ -572,7 +574,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 90db95a9ee67b9747b4663ad020dc57f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
