@@ -9,6 +9,6 @@ public class phaseStuff : MonoBehaviour
     private GameObject animHolder;
     private void Awake()
     {
-        //animHolder.GetComponent<TextMeshProUGUI>.text = animHolder.GetComponent<TextMeshProUGUI>.text + (waveDecider.Instance.currentWave+1).ToString();
+        animHolder.GetComponent<TextMeshProUGUI>().text = animHolder.GetComponent<TextMeshProUGUI>().text + (waveDecider.Instance.currentWave+1).ToString();
     }
 }
