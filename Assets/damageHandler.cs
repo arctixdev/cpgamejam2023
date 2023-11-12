@@ -7,6 +7,7 @@ public class damageHandler : MonoBehaviour
 {
 
     public string asteroid = "asteroidTag";
+    public string enemy = "enemyTag";
 
     [SerializeField]
     private healthHandler healthHandler;
@@ -14,7 +15,11 @@ public class damageHandler : MonoBehaviour
     [SerializeField]
     private float astroidAttackPower;
 
-    
+    [SerializeField]
+    private float enemyAttackPower;
+
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +42,12 @@ public class damageHandler : MonoBehaviour
         // Check if the colliding object has the specified tag
         if (collision.gameObject.CompareTag(asteroid))
         {
-            // Check if the colliding object has a Rigidbody
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                takeDamage(collision.relativeVelocity.magnitude * astroidAttackPower);
-            }
+            takeDamage(collision.relativeVelocity.magnitude * astroidAttackPower);
+        }
+
+        if (collision.gameObject.CompareTag(enemy))
+        {
+            takeDamage(enemyAttackPower);
         }
     }
 }

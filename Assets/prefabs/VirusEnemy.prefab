@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8074733717551339455}
   m_Layer: 0
   m_Name: VirusEnemy
-  m_TagString: Untagged
+  m_TagString: enemyTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,9 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11ac96c3a32b4246bc5a81fd8c68804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  asteroid: asteroidTag
+  minVelocityMagnitude: 0.1
 --- !u!1 &6151826666194839397
 GameObject:
   m_ObjectHideFlags: 0
