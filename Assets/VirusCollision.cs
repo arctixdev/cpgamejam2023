@@ -24,7 +24,6 @@ public class VirusCollision : MonoBehaviour
                 if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
                 {
 
-                    print("soundworks");
                     virAnim.SetTrigger("Explode");
                     virusAudio.PlayOneShot(hitVirus, 1f);
 
