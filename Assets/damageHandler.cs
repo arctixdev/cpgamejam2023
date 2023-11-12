@@ -48,6 +48,7 @@ public class damageHandler : MonoBehaviour
         if (collision.gameObject.CompareTag(enemy))
         {
             takeDamage(enemyAttackPower);
+            Destroy(collision.gameObject);
         }
     }
 }
