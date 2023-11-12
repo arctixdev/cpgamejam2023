@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
+
+[Serializable]
+public class executeOnEnd : UnityEvent { }
 
 public class simpleMover : MonoBehaviour
 {
@@ -28,9 +33,12 @@ public class simpleMover : MonoBehaviour
     [SerializeField]
     private bool startNow = false;
     private bool returnBool = false;
+    [SerializeField]
+    private executeOnEnd executeOnEnd; 
     // Update is called once per frame
     void Update()
     {
+        if(timeToComplete-time < 0.1f) executeOnEnd.Invoke();
         if (startNow)
         {
             time += Time.deltaTime;

@@ -40,7 +40,7 @@ public class shiftyThingy : MonoBehaviour
     }
     public void used() 
     {
-        demote.SetActive(false);
+        promote.SetActive(false);
         demote.SetActive(true);
         isPromoted = true;
     }
