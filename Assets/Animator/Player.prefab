@@ -158,8 +158,8 @@ MonoBehaviour:
   audioShooting: {fileID: 3706285576239195261}
   shootingClip: {fileID: 8300000, guid: d2ab20019e5f1c34db49b211850acc37, type: 3}
   power: 0
-  maxPower: 600
-  powerMultiplier: 600
+  maxBasePower: 600
+  chargeupSpeed: 600
   spawnLocation: {fileID: 4896697653015487296}
   virtualCamera: {fileID: 0}
   timer: 0
@@ -190,6 +190,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   zoomPower: 7
   astronautController: {fileID: 6411900284829349810}
+  debugPower: 0
+  shootMaxAdditionModifyer: 0
+  shootMaxMultiplyerModifyer: 1
 --- !u!95 &8609812008606644492
 Animator:
   serializedVersion: 5
@@ -539,8 +542,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: asteroidTag
+  enemy: enemyTag
   healthHandler: {fileID: 0}
   astroidAttackPower: 0.009
+  enemyAttackPower: 0.3
 --- !u!114 &1541891289783572011
 MonoBehaviour:
   m_ObjectHideFlags: 0
