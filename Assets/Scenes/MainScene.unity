@@ -566,6 +566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ingameHud
       objectReference: {fileID: 0}
+    - target: {fileID: 3421182555562818043, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_text
+      value: Power
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
