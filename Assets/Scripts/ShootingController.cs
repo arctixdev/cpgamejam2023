@@ -157,8 +157,7 @@ public class ShootingController : MonoBehaviour
 
     void updateZoom(float zoomProgress)
     {
-        if (zoomProgress < 0.99f)    
-            StaminaController.updateHealth(Math.Min(zoomProgress, 1));
+        StaminaController.updateHealth(zoomProgress);
         virtualCamera.m_Lens.FieldOfView = startFOV - zoomProgress * zoomPower;
     }
 }
