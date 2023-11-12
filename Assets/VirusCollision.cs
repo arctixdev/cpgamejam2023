@@ -9,6 +9,13 @@ public class VirusCollision : MonoBehaviour
     // Specify the minimum velocity threshold for destruction
     public float minVelocityMagnitude = 0.1f;
 
+    public AudioSource virusAudio;
+    public AudioClip hitVirus; 
+
+    private void Start()
+    {
+        virusAudio = GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the colliding object has the specified tag
@@ -21,6 +28,7 @@ public class VirusCollision : MonoBehaviour
                 // Check if the object is moving based on its velocity magnitude
                 if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
                 {
+                    virusAudio.PlayOneShot(hitVirus, 0.7f);
                     // If it has the target tag and is moving, destroy the GameObject
                     Destroy(gameObject);
                 }

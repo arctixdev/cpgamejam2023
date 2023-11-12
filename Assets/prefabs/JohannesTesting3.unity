@@ -2321,6 +2321,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 608443384}
+    - target: {fileID: 8074733717551339455, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
+      propertyPath: hitVirus
+      value: 
+      objectReference: {fileID: 8300000, guid: f97bb8d6a4398594d9e0b2d961e303b5, type: 3}
     - target: {fileID: 8777655684888533462, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7
