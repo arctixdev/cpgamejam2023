@@ -185,6 +185,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+--- !u!1 &403397703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 36574606317791785, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+  m_PrefabInstance: {fileID: 826009616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &478782910
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,11 +447,17 @@ MonoBehaviour:
   parrent: {fileID: 877510902}
   loadNextScene: {fileID: 6170886597513024168, guid: b18888e729df7ce4a8f4baba490759eb, type: 3}
   pack: {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
-  astronuatController: {fileID: 0}
+  astronuatController: {fileID: 403397703}
   waves:
+  - diffuculty: 1
+    groups: 2
+    baseEnemySpawnTime: 10
+    maxTime: 60
+    reward: 0
   - diffuculty: 2
-    baseEnemySpawnTime: 120
-    maxTime: 320
+    groups: 3
+    baseEnemySpawnTime: 15
+    maxTime: 60
     reward: 0
 --- !u!4 &877510902
 Transform:
