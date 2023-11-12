@@ -453,13 +453,23 @@ MonoBehaviour:
   - diffuculty: 1
     groups: 2
     baseEnemySpawnTime: 10
-    maxTime: 5
-    reward: 0
+    maxTime: 20
+    reward: 20
   - diffuculty: 2
     groups: 3
-    baseEnemySpawnTime: 15
+    baseEnemySpawnTime: 25
     maxTime: 60
-    reward: 0
+    reward: 40
+  - diffuculty: 2
+    groups: 4
+    baseEnemySpawnTime: 45
+    maxTime: 90
+    reward: 80
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 120
+    reward: 100
 --- !u!4 &877510902
 Transform:
   m_ObjectHideFlags: 0
