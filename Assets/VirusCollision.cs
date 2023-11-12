@@ -28,9 +28,12 @@ public class VirusCollision : MonoBehaviour
                 // Check if the object is moving based on its velocity magnitude
                 if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
                 {
-                    virusAudio.PlayOneShot(hitVirus, 0.7f);
+
+                    print("soundworks");
+                    virusAudio.PlayOneShot(hitVirus, 1f);
                     // If it has the target tag and is moving, destroy the GameObject
-                    Destroy(gameObject);
+
+                    Destroy(gameObject, 0.1f);
                 }
             }
         }

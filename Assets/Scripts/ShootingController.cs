@@ -14,6 +14,7 @@ public class ShootingController : MonoBehaviour
     public AudioSource audioShooting;
 
     public AudioClip shootingClip;
+    public AudioClip chargingClip;
 
     [SerializeField]
     public float power = 0;
@@ -78,6 +79,7 @@ public class ShootingController : MonoBehaviour
 
         if (astronautController.remainingAstronauts > 0) {
             if (Input.GetKeyDown(KeyCode.Space)) {
+                audioShooting.PlayOneShot(shootingClip, 0.7f);
                 power = 0;
             } else if (Input.GetKey(KeyCode.Space)) {
                 if (power < calculatedMaxBasePower) {
