@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class VirusCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Specify the layer that should trigger destruction
+    public LayerMask asteroidLayer;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        // Check if the colliding object is on the specified layer
+        if ((asteroidLayer.value & 1 << collision.gameObject.layer) > 0)
+        {
+            // If it is on the target layer, destroy the GameObject
+            Destroy(gameObject);
+        }
     }
 }
