@@ -414,10 +414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8521f46290545aabf4ccbb7b7dc253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAstronautCount: 5
+  maxAstronautCount: 10
   aliveAstronautsRect: {fileID: 0}
   deadAstronautsRect: {fileID: 0}
-  remainingAstronauts: 5
+  remainingAstronauts: 10
 --- !u!114 &1274078367369190944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +545,8 @@ MonoBehaviour:
   enemy: enemyTag
   healthHandler: {fileID: 0}
   astroidAttackPower: 0.009
+  playerDMG: {fileID: 0}
+  DMG: {fileID: 0}
   enemyAttackPower: 0.2
 --- !u!114 &1541891289783572011
 MonoBehaviour:
