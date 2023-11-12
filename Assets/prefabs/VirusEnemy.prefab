@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3005343341247272337}
   - component: {fileID: 2886185535042560839}
   - component: {fileID: 6831180683077709960}
-  - component: {fileID: 5110366352796040864}
   - component: {fileID: 8074733717551339455}
   m_Layer: 0
   m_Name: VirusEnemy
@@ -161,21 +160,6 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 0.5
   maxOffset: 20
---- !u!114 &5110366352796040864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453042021251308449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11ac96c3a32b4246bc5a81fd8c68804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &8074733717551339455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &6151826666194839397
 GameObject:
   m_ObjectHideFlags: 0
