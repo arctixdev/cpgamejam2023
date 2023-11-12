@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 6411900284829349810}
   - component: {fileID: 1274078367369190944}
   - component: {fileID: 3706285576239195261}
+  - component: {fileID: 693051953078211309}
+  - component: {fileID: 1541891289783572011}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -111,6 +113,7 @@ MonoBehaviour:
   playerSpeedAdditionModifyer: 0
   playerSpeedMultiplyerModifyer: 1
   playerRigidbody: {fileID: 4344117922245288269}
+  debug: 0
 --- !u!50 &4344117922245288269
 Rigidbody2D:
   serializedVersion: 4
@@ -520,6 +523,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &693051953078211309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36574606317791785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c734d09533270f84ea71fd5dc6ae4d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: asteroidTag
+  healthHandler: {fileID: 0}
+  astroidAttackPower: 0.009
+--- !u!114 &1541891289783572011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36574606317791785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fd46bd52b8919438bbf9c73a0fe3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefs:
+  - {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
 --- !u!1 &4464656326240083182
 GameObject:
   m_ObjectHideFlags: 0
