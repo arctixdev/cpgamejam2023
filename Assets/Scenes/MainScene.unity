@@ -442,9 +442,10 @@ MonoBehaviour:
   parrent: {fileID: 877510902}
   loadNextScene: {fileID: 6170886597513024168, guid: b18888e729df7ce4a8f4baba490759eb, type: 3}
   pack: {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
-  astronuatController: {fileID: 0}
+  astronuatController: {fileID: 1273320847}
   waves:
   - diffuculty: 1
+    groups: 0
     baseEnemySpawnTime: 120
     maxTime: 320
     reward: 0
@@ -463,6 +464,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1273320847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 36574606317791785, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+  m_PrefabInstance: {fileID: 826009616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1309877422 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3239505043082738796, guid: 14b5ba3d36ec1e246a0db43e4ba17662, type: 3}
