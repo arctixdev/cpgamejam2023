@@ -26,6 +26,12 @@ public class healthHandler : MonoBehaviour
         ResizeWidth(health * 188);
     }
 
+    public void damage(float damage)
+    {
+        health -= damage;
+        updateHealth(health);
+    }
+
     void ResizeWidth(float newWidth)
     {
 

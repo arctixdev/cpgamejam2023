@@ -11,14 +11,18 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
 
+    public AudioSource audioShooting;
+
+    public AudioClip shootingClip;
+
     [SerializeField]
     public float power = 0;
 
     [SerializeField]
-    private int maxPower = 200;
+    private int maxBasePower = 200;
 
     [SerializeField]
-    private int powerMultiplier = 100;
+    private int chargeupSpeed = 100;
 
     [SerializeField]
     private Transform spawnLocation;
@@ -26,7 +30,7 @@ public class ShootingController : MonoBehaviour
     private Rigidbody2D playerRb;
 
     [SerializeField]
-     CinemachineVirtualCamera virtualCamera;
+    CinemachineVirtualCamera virtualCamera;
 
     [SerializeField]
     float timer = 0;
@@ -45,10 +49,22 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private AstronautController astronautController;
 
+    private upgradeValueHolder ins;
+
+    [SerializeField]
+    private bool debugPower;
+    private float calculatedMaxBasePower;
+
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
-
+        audioShooting = GetComponent<AudioSource>();
         startFOV = virtualCamera.m_Lens.FieldOfView;
+
+        Debug.Log("checking for upgradeholder script");
+        ins = upgradeValueHolder.instance;
+        if (ins == null) Debug.Log("v1 null");
+        ins.upgradeChanged += upgradeChanged;
+        recalcValues();
     }
 
     void Update()
@@ -64,19 +80,20 @@ public class ShootingController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) {
                 power = 0;
             } else if (Input.GetKey(KeyCode.Space)) {
-                if (power < maxPower) {
-                    power += powerMultiplier * Time.deltaTime;
-                    updateZoom(power / maxPower);
+                if (power < calculatedMaxBasePower) {
+                    power += chargeupSpeed * Time.deltaTime;
+                    updateZoom(power / calculatedMaxBasePower);
 
                 } else {
-                    power = maxPower;
+                    power = calculatedMaxBasePower;
                 }
             } else if (Input.GetKeyUp(KeyCode.Space)) {
                 var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
                 var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
+                audioShooting.PlayOneShot(shootingClip, 0.7f);
                 rb.velocity = playerRb.velocity;
                 rb.AddForce(transform.up.ConvertTo<Vector2>() * power);
-                timer = power / maxPower * zoomOutDur;
+                timer = power / calculatedMaxBasePower * zoomOutDur;
                 power = 0;
                 astronautController.remainingAstronauts -= 1;
             } else if(timer >= 0) 
@@ -87,6 +104,46 @@ public class ShootingController : MonoBehaviour
         {
             updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
+    }
+
+    void upgradeChanged(upgrade up)
+    {
+        if (up.type == upgradeEnums.speedUpgrade)
+        {
+            recalcValues();
+        }
+    }
+    [HideInInspector]
+    public float shootMaxAdditionModifyer = 0;
+    public float shootMaxMultiplyerModifyer = 1;
+    void recalcValues()
+    {
+        shootMaxAdditionModifyer = 0;
+        shootMaxMultiplyerModifyer = 1;
+        for (int i = 0; i < ins.upgrades.Count; i++)
+        {
+            upgrade ue = ins.upgrades[i];
+            if (ue.type == upgradeEnums.launchSpeedUpgrade)
+            {
+                if (ue.modifyerType == upgradeEffect.add)
+                {
+                    shootMaxAdditionModifyer += ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.multiply)
+                {
+                    shootMaxMultiplyerModifyer += ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.divide)
+                {
+                    shootMaxAdditionModifyer /= ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.remove)
+                {
+                    shootMaxMultiplyerModifyer -= ue.effectValue;
+                }
+            }
+        }
+        calculatedMaxBasePower = (maxBasePower + shootMaxAdditionModifyer) * shootMaxMultiplyerModifyer;
     }
 
     void updateZoom(float zoomProgress)

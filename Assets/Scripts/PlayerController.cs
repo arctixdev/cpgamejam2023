@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private upgradeValueHolder ins;
 
+    [SerializeField]
+    private bool debug;
+
     private void Start()
     {
         ShipAnimator = GetComponent<Animator>();
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (debug) Debug.Log(calculatedPlayerSpeed);
         // Movement
         if (Input.GetKey(KeyCode.W)) {
             playerRigidbody.AddForce(transform.up * calculatedPlayerSpeed * Time.deltaTime);
