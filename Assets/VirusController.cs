@@ -24,7 +24,7 @@ public class VirusController : MonoBehaviour
 
             // Calculate the new position using Lerp with random offsets
             Vector2 targetPositionWithOffset = new Vector2(player.position.x + randomXOffset, player.position.y + randomYOffset);
-            Vector2 newPosition = Vector2.Lerp(transform.position, targetPositionWithOffset, Time.deltaTime * speed);
+            Vector2 newPosition = Vector2.Lerp(transform.position, targetPositionWithOffset, Time.deltaTime * speed / transform.localScale.x);
 
             // Update the object's position
             transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);

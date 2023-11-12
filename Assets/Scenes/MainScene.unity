@@ -1592,6 +1592,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: maxBasePower
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: chargeupSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class healthHandler : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class healthHandler : MonoBehaviour
     {
 
         ResizeWidth(health * 188);
+        if(health < 0)
+        {
+            death();
+        }
     }
 
     public void damage(float damage)
@@ -36,5 +41,10 @@ public class healthHandler : MonoBehaviour
     {
 
         rect.sizeDelta = new Vector2(newWidth, rect.sizeDelta.y);
+    }
+
+    void death ()
+    {
+        SceneManager.LoadScene(3);
     }
 }
