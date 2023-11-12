@@ -23,6 +23,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         public float baseEnemySpawnTime;
         public float maxTime;
     }
+    [SerializeField]
     wave[] waves;
 
     public Queue<(float, GameObject[])> timeLine;
