@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: astronautController
+      value: 
+      objectReference: {fileID: 1954411080}
     - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: deadAstronautsRect
       value: 
@@ -561,6 +565,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954411080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+  m_PrefabInstance: {fileID: 826009616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8521f46290545aabf4ccbb7b7dc253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1984554890
 GameObject:
   m_ObjectHideFlags: 0
