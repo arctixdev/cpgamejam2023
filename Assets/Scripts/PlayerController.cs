@@ -13,10 +13,13 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D playerRigidbody;
     private Animator ShipAnimator;
 
+    private upgradeValueHolder ins;
+
     private void Start()
     {
+        ins = upgradeValueHolder.instance;
         ShipAnimator = GetComponent<Animator>();
-        upgradeValueHolder.instance.upgradeChanged += upgradeChanged;
+        ins.upgradeChanged += upgradeChanged;
         recalcValues();
     }
     // Update is called once per frame
@@ -55,6 +58,31 @@ public class PlayerController : MonoBehaviour
     }
     void recalcValues()
     {
+        playerSpeedAdditionModifyer = 0;
+        playerSpeedMultiplyerModifyer = 1;
+        for (int i = 0; i < ins.upgrades.Count; i++)
+        {
+            upgrade ue = ins.upgrades[i];
+            if (ue.type == upgradeEnums.speedUpgrade)
+            {
+                if(ue.modifyerType == upgradeEffect.add)
+                {
+                    playerSpeedAdditionModifyer += ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.multiply)
+                {
+                    playerSpeedMultiplyerModifyer += ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.divide)
+                {
+                    playerSpeedAdditionModifyer /= ue.effectValue;
+                }
+                if (ue.modifyerType == upgradeEffect.remove)
+                {
+                    playerSpeedMultiplyerModifyer -= ue.effectValue;
+                }
+            }
+        }
         calculatedPlayerSpeed = (basePlayerSpeed + playerSpeedAdditionModifyer) * playerSpeedMultiplyerModifyer;
     }
 }
