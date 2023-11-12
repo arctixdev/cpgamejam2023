@@ -5,9 +5,14 @@ using UnityEngine;
 public class VirusController : MonoBehaviour
 {
 
-    public Transform playerTransofmr;
+    Transform playerTransofmr;
     public float speed = 0.5f;
     public float maxOffset = 1.0f;
+
+    private void Start()
+    {
+        playerTransofmr = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {

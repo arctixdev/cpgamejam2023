@@ -9,6 +9,7 @@ public class healthHandler : MonoBehaviour
 
     RectTransform rect;
 
+    [SerializeField] bool isStamina; 
     public float health;
     void Start()
     {
@@ -23,9 +24,9 @@ public class healthHandler : MonoBehaviour
 
     public void updateHealth (float health)
     {
-
+        this.health = health;
         ResizeWidth(health * 188);
-        if(health < 0)
+        if(health < 0 && !isStamina)
         {
             death();
         }

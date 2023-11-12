@@ -7,6 +7,7 @@ public class waveDecider : MonoBehaviour
 {
     public static waveDecider Instance;
     public int currentWave = -1;
+    private int nextReward;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,9 @@ public class waveDecider : MonoBehaviour
     {
         currentWave++;
         return currentWave;
+    }
+    public void giveReward(int reward)
+    {
+        nextReward += reward;
     }
 }
