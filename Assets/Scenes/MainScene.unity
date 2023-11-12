@@ -1603,6 +1603,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
+    - target: {fileID: 3706285576239195261, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: deadAstronautsRect
       value: 
@@ -2032,6 +2036,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1762586476109929766, guid: 79a405884307d994ca78feda7b17fd8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4740614336086730087, guid: 79a405884307d994ca78feda7b17fd8d, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
