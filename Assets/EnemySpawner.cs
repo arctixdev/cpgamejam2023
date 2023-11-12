@@ -13,10 +13,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemies()
     {
-        if(enemyPrefabs.Length == 0)
+        if (enemyPrefabs.Length == 0)
         {
             return;
         }
+
         for (int i = 0; i < numberOfEnemies; i++)
         {
             // Calculate a random angle
@@ -36,6 +37,10 @@ public class EnemySpawner : MonoBehaviour
 
             // Instantiate the selected enemy prefab at the random position
             GameObject newEnemy = Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
+
+            // Set a random scale for the spawned enemy
+            float randomScale = Random.Range(0.5f, 2f); // Adjust the range according to your preferences
+            newEnemy.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
 
             // Optionally, you can set up additional configurations for the spawned enemy here
             // For example, you might want to set a parent for organization or apply other properties.
