@@ -22,7 +22,10 @@ public class IngameMenuScript : MonoBehaviour
 
     void Update() {
         timerText.text = "Time: " + Mathf.FloorToInt(Time.timeSinceLevelLoad*10).ToString();
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) ) {
+            ToggleMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.M) ) {
             ToggleMenu();
         }
     }
