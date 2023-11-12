@@ -545,7 +545,7 @@ MonoBehaviour:
   enemy: enemyTag
   healthHandler: {fileID: 0}
   astroidAttackPower: 0.009
-  enemyAttackPower: 0
+  enemyAttackPower: 0.3
 --- !u!114 &1541891289783572011
 MonoBehaviour:
   m_ObjectHideFlags: 0
