@@ -237,6 +237,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c0df7bfb05801a245819ee2b93f449ca, type: 3}
     - target: {fileID: 693051953078211309, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: ASTDMG
+      value: 
+      objectReference: {fileID: 8300000, guid: 332917b0b98874d48b08e10732fdf640, type: 3}
+    - target: {fileID: 693051953078211309, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: playerDMG
       value: 
       objectReference: {fileID: 608443398}
