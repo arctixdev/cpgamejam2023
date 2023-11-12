@@ -19,7 +19,7 @@ public class VirusCollision : MonoBehaviour
             if (rb != null)
             {
                 // Check if the object is moving based on its velocity magnitude
-                if (rb.velocity.magnitude > minVelocityMagnitude)
+                if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
                 {
                     // If it has the target tag and is moving, destroy the GameObject
                     Destroy(gameObject);
