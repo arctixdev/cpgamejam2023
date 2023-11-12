@@ -34,6 +34,10 @@ public class ShootingController : MonoBehaviour
     CinemachineVirtualCamera virtualCamera;
 
     [SerializeField]
+    public healthHandler StaminaController;
+
+
+    [SerializeField]
     float timer = 0;
 
     [SerializeField]
@@ -57,6 +61,8 @@ public class ShootingController : MonoBehaviour
     private float calculatedMaxBasePower;
 
     void Start() {
+
+        
         playerRb = GetComponent<Rigidbody2D>();
         audioShooting = GetComponent<AudioSource>();
         startFOV = virtualCamera.m_Lens.FieldOfView;
@@ -151,6 +157,8 @@ public class ShootingController : MonoBehaviour
 
     void updateZoom(float zoomProgress)
     {
+        if (zoomProgress < 0.99f)    
+            StaminaController.updateHealth(Math.Min(zoomProgress, 1));
         virtualCamera.m_Lens.FieldOfView = startFOV - zoomProgress * zoomPower;
     }
 }
