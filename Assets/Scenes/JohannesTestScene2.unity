@@ -372,17 +372,9 @@ PrefabInstance:
       value: VirusEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6831180683077709960, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831180683077709960, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1562567537}
-    - target: {fileID: 6831180683077709960, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
-      propertyPath: maxOffset
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 8777655684888533462, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1599
