@@ -37,9 +37,18 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private AnimationCurve outAnimCurve;
 
+    [SerializeField]
+    private float zoomPower;
+
+    private float startFOV;
+
+    [SerializeField]
+    private AstronautController astronautController;
 
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
+
+        startFOV = virtualCamera.m_Lens.FieldOfView;
     }
 
     void Update()
@@ -51,36 +60,34 @@ public class ShootingController : MonoBehaviour
             timer = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            power = 0;
-        } else if (Input.GetKey(KeyCode.Space)) {
-            if (power < maxPower) {
-                power += powerMultiplier * Time.deltaTime;
-                updateZoom(power / maxPower);
+        if (astronautController.remainingAstronauts > 0) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                power = 0;
+            } else if (Input.GetKey(KeyCode.Space)) {
+                if (power < maxPower) {
+                    power += powerMultiplier * Time.deltaTime;
+                    updateZoom(power / maxPower);
 
-            } else {
-                power = maxPower;
+                } else {
+                    power = maxPower;
+                }
+            } else if (Input.GetKeyUp(KeyCode.Space)) {
+                var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
+                var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
+                rb.velocity = playerRb.velocity;
+                rb.AddForce(transform.up.ConvertTo<Vector2>() * power);
+                timer = power / maxPower * zoomOutDur;
+                power = 0;
+                astronautController.remainingAstronauts -= 1;
+            } else if(timer >= 0) 
+            {
+                updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
             }
-        } else if (Input.GetKeyUp(KeyCode.Space)) {
-            var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
-            var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.up.ConvertTo<Vector2>() * power + playerRb.velocity);
-            timer = power / maxPower * zoomOutDur;
-            power = 0;
- 
-
-        } else if(timer >= 0) 
-        {
-            updateZoom(outAnimCurve.Evaluate(timer / zoomOutDur));
         }
-
-
-
-
     }
 
     void updateZoom(float zoomProgress)
     {
-        virtualCamera.m_Lens.OrthographicSize = 7.52f - zoomProgress;
+        virtualCamera.m_Lens.FieldOfView = startFOV - zoomProgress * zoomPower;
     }
 }

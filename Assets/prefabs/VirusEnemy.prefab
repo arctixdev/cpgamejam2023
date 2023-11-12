@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2900733534163820605}
   - component: {fileID: 3005343341247272337}
   - component: {fileID: 2886185535042560839}
+  - component: {fileID: 6831180683077709960}
   m_Layer: 0
   m_Name: VirusEnemy
   m_TagString: Untagged
@@ -143,6 +144,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.032215327}
   serializedVersion: 2
   m_Radius: 0.4234886
+--- !u!114 &6831180683077709960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453042021251308449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bd610ec61088f4eb5992e22c6b86a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 847408272778089240, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+  speed: 2
 --- !u!1 &6151826666194839397
 GameObject:
   m_ObjectHideFlags: 0
