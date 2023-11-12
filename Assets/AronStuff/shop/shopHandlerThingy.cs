@@ -13,15 +13,12 @@ public class shopHandlerThingy : MonoBehaviour
     private GameObject[] usedSlots;
     [SerializeField]
     private GameObject[] notUsedSlots;
-    private int cUsedSlots = -1;
-    private int cNotUsedSlots = -1;
 
     [SerializeField]
     private GameObject[] upgradeSlides = new GameObject[2];
     // Start is called before the first frame update
     void Start()
     {
-        cNotUsedSlots = upgradeSlides.Length-1;
     }
 
     // Update is called once per frame
