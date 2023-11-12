@@ -178,6 +178,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  zoomPower: 7
+  astronautController: {fileID: 6411900284829349810}
 --- !u!95 &8609812008606644492
 Animator:
   serializedVersion: 5
