@@ -7,6 +7,7 @@ public enum upgradeEnums
 {
     speedUpgrade,
     launchSpeedUpgrade,
+    crewUpgrade,
     healthUpgrade,
     other
 }
