@@ -1680,6 +1680,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: StaminaController
+      value: 
+      objectReference: {fileID: 852402570}
     - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: deadAstronautsRect
       value: 
@@ -1701,6 +1705,17 @@ Transform:
 --- !u!114 &851618679 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 780979311359333854, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+  m_PrefabInstance: {fileID: 1420313332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11feef7b47d7f3c4d9be55f22e060396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &852402570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8289868583559660161, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
   m_PrefabInstance: {fileID: 1420313332}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
