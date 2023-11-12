@@ -12,8 +12,9 @@ public class ShootingController : MonoBehaviour
     private GameObject projectilePrefab;
 
     public AudioSource audioShooting;
-
     public AudioClip shootingClip;
+
+    public AudioSource chargingSource;
 
     [SerializeField]
     public float power = 0;
@@ -78,6 +79,7 @@ public class ShootingController : MonoBehaviour
 
         if (astronautController.remainingAstronauts > 0) {
             if (Input.GetKeyDown(KeyCode.Space)) {
+                chargingSource.Play();
                 power = 0;
             } else if (Input.GetKey(KeyCode.Space)) {
                 if (power < calculatedMaxBasePower) {
@@ -91,6 +93,7 @@ public class ShootingController : MonoBehaviour
                 var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
                 var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
                 audioShooting.PlayOneShot(shootingClip, 0.7f);
+                chargingSource.Stop();
                 rb.velocity = playerRb.velocity;
                 rb.AddForce(transform.up.ConvertTo<Vector2>() * power);
                 timer = power / calculatedMaxBasePower * zoomOutDur;

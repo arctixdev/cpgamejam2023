@@ -128,6 +128,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8770453892302583396, guid: d50fc74c825d5e9458bbd19fdcb2f428, type: 3}
   m_PrefabInstance: {fileID: 2780770919603573022}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &350359389
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1599652424515506693, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_Name
+      value: InGameMenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 174.96997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.306297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 213886.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160025029163624130, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 639b171bbeb844632890f51ca417fdcc, type: 3}
 --- !u!1 &478782910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,13 +1649,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: maxBasePower
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: chargeupSpeed
-      value: 883
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1905741325698046700, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1309877422}
+    - target: {fileID: 3706285576239195261, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344117922245288269, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344117922245288269, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: deadAstronautsRect
       value: 
@@ -1607,6 +1680,10 @@ PrefabInstance:
       propertyPath: aliveAstronautsRect
       value: 
       objectReference: {fileID: 240039319}
+    - target: {fileID: 6802323477481135982, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: basePlayerSpeed
+      value: 600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2028,6 +2105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1762586476109929766, guid: 79a405884307d994ca78feda7b17fd8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4740614336086730087, guid: 79a405884307d994ca78feda7b17fd8d, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
@@ -2255,3 +2336,4 @@ SceneRoots:
   - {fileID: 1420313332}
   - {fileID: 1731388987}
   - {fileID: 1797172824}
+  - {fileID: 350359389}

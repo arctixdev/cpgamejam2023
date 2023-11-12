@@ -21,6 +21,9 @@ public class damageHandler : MonoBehaviour
     private AudioClip DMG;
 
     [SerializeField]
+    private AudioClip ASTDMG;
+
+    [SerializeField]
     private float enemyAttackPower;
 
     Rigidbody2D rb;
@@ -48,7 +51,9 @@ public class damageHandler : MonoBehaviour
         // Check if the colliding object has the specified tag
         if (collision.gameObject.CompareTag(asteroid))
         {
+            playerDMG.PlayOneShot(ASTDMG, 1f * collision.relativeVelocity.magnitude);
             takeDamage(collision.relativeVelocity.magnitude * astroidAttackPower);
+
         }
 
         if (collision.gameObject.CompareTag(enemy))
