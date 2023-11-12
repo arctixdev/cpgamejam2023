@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroid: asteroidTag
   healthHandler: {fileID: 851618679}
-  astroidAttackPower: 0.04
+  astroidAttackPower: 0.009
 --- !u!114 &838443723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,38 +1762,6 @@ PrefabInstance:
     - target: {fileID: 783971083101656572, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
       propertyPath: m_Name
       value: ingameHud
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814579610894019845, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
