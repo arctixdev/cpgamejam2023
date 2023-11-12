@@ -14,12 +14,22 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     private GameObject loadNextScene;
     float timer;
 
+    [System.Serializable]
+    public struct wave
+    {
+        public int diffuculty;
+        public float baseEnemySpawnTime;
+        public float maxTime;
+    }
+    wave[] waves;
+
     public Queue<(float, GameObject[])> timeLine;
     // Start is called before the first frame update
     void Start()
     {
         mES = ModyfiedEnemySpawner.Instance;
-        initiateFase(2,120,240);
+        initiateFase(waves[waveDecider.Instance.startNewWave()]);
+        //initiateFase(2,120,240);
     }
 
     // Update is called once per frame
@@ -63,8 +73,12 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
         }
     }
+    public void initiateFase(wave wave)
+    {
+        initiateFase(wave.diffuculty, wave.baseEnemySpawnTime, wave.maxTime);
+    }
 
-    GameObject[] fillArray(int size, GameObject fill)
+        GameObject[] fillArray(int size, GameObject fill)
     {
         GameObject[] gma = new GameObject[size];
         for (int i = 0; i < size; i++)
