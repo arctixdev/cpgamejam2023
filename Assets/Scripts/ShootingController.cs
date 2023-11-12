@@ -84,10 +84,10 @@ public class ShootingController : MonoBehaviour
         }
 
         if (astronautController.remainingAstronauts > 0) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
                 chargingSource.Play();
                 power = 0;
-            } else if (Input.GetKey(KeyCode.Space)) {
+            } else if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) {
                 if (power < calculatedMaxBasePower) {
                     power += chargeupSpeed * Time.deltaTime;
                     updateZoom(power / calculatedMaxBasePower);
@@ -95,7 +95,7 @@ public class ShootingController : MonoBehaviour
                 } else {
                     power = calculatedMaxBasePower;
                 }
-            } else if (Input.GetKeyUp(KeyCode.Space)) {
+            } else if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) {
                 var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
                 var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
                 audioShooting.PlayOneShot(shootingClip, 0.7f);

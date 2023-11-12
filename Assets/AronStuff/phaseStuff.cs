@@ -7,8 +7,12 @@ public class phaseStuff : MonoBehaviour
 {
     [SerializeField]
     private GameObject animHolder;
-    private void Awake()
+    [SerializeField]
+    private TextMeshProUGUI textMeshProUGUI;
+    private void Start()
     {
-        animHolder.GetComponent<TextMeshProUGUI>().text = animHolder.GetComponent<TextMeshProUGUI>().text + (waveDecider.Instance.currentWave+1).ToString();
+        string x = textMeshProUGUI.text  + (waveDecider.Instance.currentWave + 1).ToString();
+        Debug.Log("text = "+x);
+        textMeshProUGUI.text = x;
     }
 }
