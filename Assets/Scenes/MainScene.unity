@@ -1664,6 +1664,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4344117922245288269, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344117922245288269, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6411900284829349810, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: deadAstronautsRect
       value: 
@@ -1672,6 +1680,10 @@ PrefabInstance:
       propertyPath: aliveAstronautsRect
       value: 
       objectReference: {fileID: 240039319}
+    - target: {fileID: 6802323477481135982, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: basePlayerSpeed
+      value: 600
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
