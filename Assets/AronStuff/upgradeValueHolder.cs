@@ -41,6 +41,7 @@ public struct upgrade
     /// how much to add remove or divide by. in case of multiply 0.1 = 110%
     /// </summary>
     public float effectValue;
+    public int cost;
     public int id;
 }
 
