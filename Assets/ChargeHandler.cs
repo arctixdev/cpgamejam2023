@@ -14,9 +14,19 @@ public class ChargeHandler : MonoBehaviour
 
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    
+    void ResizeWidth(float newWidth)
+    {
+
+        rect.sizeDelta = new Vector2(newWidth, rect.sizeDelta.y);
+    }
+
 }
