@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4847811882127374876, guid: 646d67b178329464f8d191b1b7583aef, type: 3}
+      propertyPath: m_TagString
+      value: phaseText
+      objectReference: {fileID: 0}
     - target: {fileID: 5491378503368297327, guid: 646d67b178329464f8d191b1b7583aef, type: 3}
       propertyPath: m_Name
       value: phasePrefab
@@ -446,6 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11feef7b47d7f3c4d9be55f22e060396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStamina: 0
   health: 0
 --- !u!224 &8215386628353590259 stripped
 RectTransform:
