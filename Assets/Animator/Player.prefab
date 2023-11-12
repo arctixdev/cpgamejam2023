@@ -159,7 +159,7 @@ MonoBehaviour:
   shootingClip: {fileID: 8300000, guid: d2ab20019e5f1c34db49b211850acc37, type: 3}
   power: 0
   maxBasePower: 600
-  chargeupSpeed: 600
+  chargeupSpeed: 883
   spawnLocation: {fileID: 4896697653015487296}
   virtualCamera: {fileID: 0}
   timer: 0
