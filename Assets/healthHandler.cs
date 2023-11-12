@@ -26,7 +26,7 @@ public class healthHandler : MonoBehaviour
     {
         this.health = health;
         ResizeWidth(health * 188);
-        if(health < 0 && !isStamina)
+        if(health <= 0 && !isStamina)
         {
             death();
         }
