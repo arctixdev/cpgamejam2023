@@ -23,6 +23,9 @@ public class waveDecider : MonoBehaviour
     public int startNewWave()
     {
         currentWave++;
+        if (currentWave == 3) {
+            SceneManager.LoadScene("GameWonScene");
+        }
         return currentWave;
     }
     public void giveReward(int reward)

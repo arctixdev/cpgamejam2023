@@ -604,6 +604,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: phase text
       objectReference: {fileID: 0}
+    - target: {fileID: 8215386628353590259, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215386628353590259, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215386628353590259, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215386628353590259, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215386628353590259, guid: e1fa3bff567ba3749b3108d2ca56b02b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.579987
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
