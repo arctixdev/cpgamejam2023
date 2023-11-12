@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8770453892302583396, guid: d50fc74c825d5e9458bbd19fdcb2f428, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.5004272
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -598,8 +602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75.103, y: -75.1}
-  m_SizeDelta: {x: 150.20593, y: 126.42859}
+  m_AnchoredPosition: {x: -75.49892, y: -75.1}
+  m_SizeDelta: {x: 236.9884, y: 126.4286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049653864
 MonoBehaviour:
@@ -866,7 +870,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
