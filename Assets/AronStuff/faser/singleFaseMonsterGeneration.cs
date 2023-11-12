@@ -48,7 +48,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             if(timeLine.Count < 2)
             {
                 giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
-                SceneManager.LoadScene("UpgradeScene");
+                SceneManager.LoadScene("RoundWonScene");
             }
             GameObject[] gm = timeLine.Dequeue().Item2;
             Debug.Log(gm.Length);
@@ -59,7 +59,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         if(transform.childCount < 1 && timer > 40)
         {
             giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 0);
-            SceneManager.LoadScene("UpgradeScene");
+            SceneManager.LoadScene("RoundWonScene");
         }
     }
     int curDiffuculty;
