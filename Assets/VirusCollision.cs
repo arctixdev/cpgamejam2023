@@ -10,10 +10,11 @@ public class VirusCollision : MonoBehaviour
     public float minVelocityMagnitude = 0.1f;
 
     public AudioSource virusAudio;
-    public AudioClip hitVirus; 
-
+    public AudioClip hitVirus;
+    public Animator virAnim;
     private void Start()
     {
+        virAnim = GetComponent<Animator>();
         virusAudio = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,12 +31,22 @@ public class VirusCollision : MonoBehaviour
                 {
 
                     print("soundworks");
+                    virAnim.SetTrigger("Explode");
                     virusAudio.PlayOneShot(hitVirus, 1f);
+
+                    CircleCollider2D virCollider = GetComponent<CircleCollider2D>();
+                    Destroy(virCollider);
                     // If it has the target tag and is moving, destroy the GameObject
 
-                    Destroy(gameObject, 0.1f);
                 }
             }
         }
+    }
+
+    public void Explode()
+    {
+        Destroy(gameObject);
+
+
     }
 }

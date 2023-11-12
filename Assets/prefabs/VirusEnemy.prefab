@@ -176,7 +176,8 @@ MonoBehaviour:
   asteroid: asteroidTag
   minVelocityMagnitude: 1
   virusAudio: {fileID: 6618930746555975882}
-  hitVirus: {fileID: 8300000, guid: c0df7bfb05801a245819ee2b93f449ca, type: 3}
+  hitVirus: {fileID: 8300000, guid: f97bb8d6a4398594d9e0b2d961e303b5, type: 3}
+  virAnim: {fileID: 0}
 --- !u!82 &6618930746555975882
 AudioSource:
   m_ObjectHideFlags: 0
