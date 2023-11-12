@@ -6,7 +6,7 @@ using UnityEngine;
 public class AstronautController : MonoBehaviour
 {
     [SerializeField]
-    private int maxAstronautCount = 5;
+    public int maxAstronautCount = 5;
 
     [SerializeField]
     private RectTransform aliveAstronautsRect;
