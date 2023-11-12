@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -1741723479, guid: d00c259f02d550b4ebef8d2743ef78aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -158,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bd610ec61088f4eb5992e22c6b86a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   speed: 0.2
   maxOffset: 20
 --- !u!114 &8074733717551339455
