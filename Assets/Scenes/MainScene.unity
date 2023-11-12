@@ -262,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 15762724852951478, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 453042021251308449, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
     - target: {fileID: 1268392613920055288, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -1632,6 +1632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 36574606317791785, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 693051953078211309, guid: 4149cd7901fbd064c8402ccaf3fe553d, type: 3}
       propertyPath: healthHandler
       value: 
@@ -1754,14 +1758,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 0}
+  - {fileID: 453042021251308449, guid: 91ea7c35e2e231541ad8cbda6e24d1da, type: 3}
   parrent: {fileID: 877510902}
   loadNextScene: {fileID: 6170886597513024168, guid: b18888e729df7ce4a8f4baba490759eb, type: 3}
   pack: {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
+  astronuatController: {fileID: 0}
   waves:
   - diffuculty: 2
     baseEnemySpawnTime: 120
     maxTime: 320
+    reward: 0
 --- !u!4 &877510902
 Transform:
   m_ObjectHideFlags: 0
@@ -2259,6 +2265,10 @@ PrefabInstance:
     - target: {fileID: 4128095829629341813, guid: d50fc74c825d5e9458bbd19fdcb2f428, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128095829629341813, guid: d50fc74c825d5e9458bbd19fdcb2f428, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 8770453892302583396, guid: d50fc74c825d5e9458bbd19fdcb2f428, type: 3}
       propertyPath: m_AnchoredPosition.x

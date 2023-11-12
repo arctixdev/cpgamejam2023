@@ -11,7 +11,7 @@ public class VirusController : MonoBehaviour
 
     private void Start()
     {
-        playerTransofmr = GameObject.FindGameObjectWithTag("player").transform;
+        playerTransofmr = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
