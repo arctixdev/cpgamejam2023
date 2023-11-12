@@ -5,13 +5,14 @@ using UnityEngine;
 public class VirusCollision : MonoBehaviour
 {
     // Specify the layer that should trigger destruction
-    public LayerMask asteroidLayer;
+    public string asteroid = "asteroidTag";
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+
         // Check if the colliding object is on the specified layer
-        if ((asteroidLayer.value & 1 << collision.gameObject.layer) > 0)
-        {
+        if (collision.gameObject.CompareTag(asteroid)) { 
+
             // If it is on the target layer, destroy the GameObject
             Destroy(gameObject);
         }
