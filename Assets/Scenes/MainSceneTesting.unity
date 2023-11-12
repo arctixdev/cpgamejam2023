@@ -1683,6 +1683,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 1731388988}
   parrent: {fileID: 1265442992}
+  loadNextScene: {fileID: 6170886597513024168, guid: b18888e729df7ce4a8f4baba490759eb, type: 3}
 --- !u!4 &1265442992
 Transform:
   m_ObjectHideFlags: 0
