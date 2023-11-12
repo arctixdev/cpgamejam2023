@@ -22,6 +22,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     public struct wave
     {
         public int diffuculty;
+        public int groups;
         public float baseEnemySpawnTime;
         public float maxTime;
         public int reward;
@@ -71,7 +72,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         curBaseEnemySpawnTime = baseEnemySpawnTime;
         curMaxTime = maxTime;
         List<(float, GameObject[])> ls = new List<(float, GameObject[])>();
-        for (int i = 0; i < diffuculty*5; i++)
+        for (int i = 0; i < diffuculty*waves[waveDecider.Instance.currentWave].groups; i++)
         {
             ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
             ls.Sort(delegate ((float, GameObject[]) x, (float, GameObject[]) y)
