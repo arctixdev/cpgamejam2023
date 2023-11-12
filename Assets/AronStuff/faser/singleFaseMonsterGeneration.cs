@@ -14,6 +14,8 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     private GameObject loadNextScene;
     [SerializeField]
     private GameObject pack;
+    [SerializeField]
+    private GameObject astronuatController;
     float timer;
 
     [System.Serializable]
@@ -22,9 +24,9 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         public int diffuculty;
         public float baseEnemySpawnTime;
         public float maxTime;
+        public int reward;
     }
-    [SerializeField]
-    wave[] waves;
+    public wave[] waves;
 
     public Queue<(float, GameObject[])> timeLine;
     // Start is called before the first frame update
@@ -42,6 +44,11 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         timer += Time.deltaTime;
         if(timer>timeLine.Peek().Item1)
         {
+            if(timeLine.Count < 2)
+            {
+                giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
+                SceneManager.LoadScene("UpgradeScene");
+            }
             GameObject[] gm = timeLine.Dequeue().Item2;
             Debug.Log(gm.Length);
             Debug.Log(gm);
@@ -50,6 +57,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         }
         if(transform.childCount < 1 && timer > 40)
         {
+            giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 0);
             SceneManager.LoadScene("UpgradeScene");
         }
     }
@@ -99,5 +107,10 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             gma[i] = fill[Random.Range(0,fill.Length-1)];
         }
         return gma;
+    }
+
+    public void giveEndReward(int start , GameObject asc, int extraMinus)
+    {
+        waveDecider.Instance.giveReward(start - (asc.GetComponent<AstronautController>().maxAstronautCount - asc.GetComponent<AstronautController>().remainingAstronauts) - extraMinus);
     }
 }
