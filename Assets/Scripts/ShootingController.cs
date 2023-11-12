@@ -11,6 +11,10 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
 
+    public AudioSource audioShooting;
+
+    public AudioClip shootingClip;
+
     [SerializeField]
     public float power = 0;
 
@@ -47,7 +51,7 @@ public class ShootingController : MonoBehaviour
 
     void Start() {
         playerRb = GetComponent<Rigidbody2D>();
-
+        audioShooting = GetComponent<AudioSource>();
         startFOV = virtualCamera.m_Lens.FieldOfView;
     }
 
@@ -74,6 +78,7 @@ public class ShootingController : MonoBehaviour
             } else if (Input.GetKeyUp(KeyCode.Space)) {
                 var spawnedProjectile = Instantiate(projectilePrefab, spawnLocation.position, spawnLocation.rotation);
                 var rb = spawnedProjectile.GetComponent<Rigidbody2D>();
+                audioShooting.PlayOneShot(shootingClip, 0.7f);
                 rb.velocity = playerRb.velocity;
                 rb.AddForce(transform.up.ConvertTo<Vector2>() * power);
                 timer = power / maxPower * zoomOutDur;
