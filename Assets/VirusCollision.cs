@@ -4,37 +4,27 @@ using UnityEngine;
 
 public class VirusCollision : MonoBehaviour
 {
-    // Specify the layer that should trigger destruction
-    public string asteroid = "asteroidTag";
-    // Specify the minimum velocity threshold for destruction
-    public float minVelocityMagnitude = 0.1f;
+    [SerializeField]
+    private string asteroidTagName = "asteroidTag";
 
-    public AudioSource virusAudio;
-    public AudioClip hitVirus; 
+    [SerializeField]
+    private float minSpeedForKill = 0.1f;
 
-    private void Start()
-    {
-        virusAudio = GetComponent<AudioSource>();
-    }
+    [SerializeField]
+    private AudioSource virusAudioSource;
+    
+    [SerializeField]
+    private AudioClip hitVirusSound;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the colliding object has the specified tag
-        if (collision.gameObject.CompareTag(asteroid))
+        if (collision.gameObject.CompareTag(asteroidTagName))
         {
-            // Check if the colliding object has a Rigidbody
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            Rigidbody2D colliderRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (colliderRb && collision.relativeVelocity.magnitude > minSpeedForKill)
             {
-                // Check if the object is moving based on its velocity magnitude
-                if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
-                {
-
-                    print("soundworks");
-                    virusAudio.PlayOneShot(hitVirus, 1f);
-                    // If it has the target tag and is moving, destroy the GameObject
-
-                    Destroy(gameObject, 0.1f);
-                }
+                virusAudioSource.PlayOneShot(hitVirusSound, 1f);
+                Destroy(gameObject, 0.1f);
             }
         }
     }
