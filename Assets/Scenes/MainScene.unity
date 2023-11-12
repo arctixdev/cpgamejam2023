@@ -444,7 +444,7 @@ MonoBehaviour:
   pack: {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
   astronuatController: {fileID: 0}
   waves:
-  - diffuculty: 2
+  - diffuculty: 1
     baseEnemySpawnTime: 120
     maxTime: 320
     reward: 0
