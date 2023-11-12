@@ -16,6 +16,11 @@ public class damageHandler : MonoBehaviour
     private float astroidAttackPower;
 
     [SerializeField]
+    private AudioSource playerDMG;
+    [SerializeField]
+    private AudioClip DMG;
+
+    [SerializeField]
     private float enemyAttackPower;
 
     Rigidbody2D rb;
@@ -23,7 +28,7 @@ public class damageHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerDMG = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +39,7 @@ public class damageHandler : MonoBehaviour
 
     void takeDamage(float damage)
     {
+
         healthHandler.damage(damage);
     }
 
@@ -47,6 +53,7 @@ public class damageHandler : MonoBehaviour
 
         if (collision.gameObject.CompareTag(enemy))
         {
+            playerDMG.PlayOneShot(DMG, 0.5f);
             takeDamage(enemyAttackPower);
             Destroy(collision.gameObject);
         }
