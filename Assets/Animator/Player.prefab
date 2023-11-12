@@ -105,7 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157f00804289047648ed2ff30aab4945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 400
+  basePlayerSpeed: 400
+  playerSpeedAdditionModifyer: 0
+  playerSpeedMultiplyerModifyer: 1
   playerRigidbody: {fileID: 4344117922245288269}
 --- !u!50 &4344117922245288269
 Rigidbody2D:
