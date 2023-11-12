@@ -29,7 +29,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             Debug.Log(gm.Length);
             Debug.Log(gm);
             if (!mES) mES = ModyfiedEnemySpawner.Instance;
-            mES.SpawnEnemies(gm, (0.04f, 0.1f), parrent);
+            mES.SpawnEnemies(gm, (0.5f, 3f), parrent);
         }
     }
 
@@ -37,7 +37,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     {
         timer = 0;
         List<(float, GameObject[])> ls = new List<(float, GameObject[])>();
-        for (int i = 0; i < diffuculty*15; i++)
+        for (int i = 0; i < diffuculty*5; i++)
         {
             ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
             ls.Sort(delegate ((float, GameObject[]) x, (float, GameObject[]) y)

@@ -1558,6 +1558,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5912928533679172543, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2019412263}
+    - targetCorrespondingSourceObject: {fileID: 5912928533679172543, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2019412265}
   m_SourcePrefab: {fileID: 100100000, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
 --- !u!1001 &826009616
 PrefabInstance:
@@ -1679,7 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 1731388988}
-  parrent: {fileID: 2019412264}
+  parrent: {fileID: 1265442992}
 --- !u!4 &1265442992
 Transform:
   m_ObjectHideFlags: 0
@@ -2213,11 +2216,22 @@ MonoBehaviour:
   - {fileID: 1731388988}
   numberOfEnemies: 5
   spawnRadius: 10
---- !u!4 &2019412264 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3070595766207250963, guid: a98958b4e4af3954c96c6bc7c946d521, type: 3}
-  m_PrefabInstance: {fileID: 669004599}
+--- !u!114 &2019412265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019412261}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945104b246e4bb44fab40e3a27fdfd3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1731388988}
+  numberOfEnemies: 5
+  spawnRadius: 10
 --- !u!1001 &2780770919603573022
 PrefabInstance:
   m_ObjectHideFlags: 0
