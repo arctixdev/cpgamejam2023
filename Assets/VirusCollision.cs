@@ -4,28 +4,49 @@ using UnityEngine;
 
 public class VirusCollision : MonoBehaviour
 {
-    [SerializeField]
-    private string asteroidTagName = "asteroidTag";
+    // Specify the layer that should trigger destruction
+    public string asteroid = "asteroidTag";
+    // Specify the minimum velocity threshold for destruction
+    public float minVelocityMagnitude = 0.1f;
 
-    [SerializeField]
-    private float minSpeedForKill = 0.1f;
-
-    [SerializeField]
-    private AudioSource virusAudioSource;
-    
-    [SerializeField]
-    private AudioClip hitVirusSound;
-
+    public AudioSource virusAudio;
+    public AudioClip hitVirus;
+    public Animator virAnim;
+    private void Start()
+    {
+        virAnim = GetComponent<Animator>();
+        virusAudio = GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(asteroidTagName))
+        // Check if the colliding object has the specified tag
+        if (collision.gameObject.CompareTag(asteroid))
         {
-            Rigidbody2D colliderRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if (colliderRb && collision.relativeVelocity.magnitude > minSpeedForKill)
+            // Check if the colliding object has a Rigidbody
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
             {
-                virusAudioSource.PlayOneShot(hitVirusSound, 1f);
-                Destroy(gameObject, 0.1f);
+                // Check if the object is moving based on its velocity magnitude
+                if (collision.relativeVelocity.magnitude > minVelocityMagnitude)
+                {
+
+                    print("soundworks");
+                    virAnim.SetTrigger("Explode");
+                    virusAudio.PlayOneShot(hitVirus, 1f);
+
+                    CircleCollider2D virCollider = GetComponent<CircleCollider2D>();
+                    Destroy(virCollider);
+                    // If it has the target tag and is moving, destroy the GameObject
+
+                }
             }
         }
+    }
+
+    public void Explode()
+    {
+        Destroy(gameObject);
+
+
     }
 }
