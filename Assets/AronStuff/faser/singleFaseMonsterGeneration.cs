@@ -56,7 +56,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             if (!mES) mES = ModyfiedEnemySpawner.Instance;
             mES.SpawnEnemies(gm, (1f - (curDiffuculty / 3), 3f - (curDiffuculty / 3)), parrent);
         }
-        if(transform.childCount < 1 && timer > 40)
+        if(transform.childCount < 1 && timer > 10)
         {
             giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 0);
             SceneManager.LoadScene("RoundWonScene");
