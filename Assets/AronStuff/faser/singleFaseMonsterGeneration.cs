@@ -12,6 +12,8 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     private Transform parrent;
     [SerializeField]
     private GameObject loadNextScene;
+    [SerializeField]
+    private GameObject pack;
     float timer;
 
     [System.Serializable]
@@ -28,6 +30,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     void Start()
     {
         mES = ModyfiedEnemySpawner.Instance;
+        if (waveDecider.Instance == null) Instantiate(pack);
         initiateFase(waves[waveDecider.Instance.startNewWave()]);
         //initiateFase(2,120,240);
     }

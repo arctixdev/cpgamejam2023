@@ -1757,6 +1757,7 @@ MonoBehaviour:
   - {fileID: 1731388988}
   parrent: {fileID: 877510902}
   loadNextScene: {fileID: 6170886597513024168, guid: b18888e729df7ce4a8f4baba490759eb, type: 3}
+  pack: {fileID: 1332584309492237844, guid: 740e60a9f394016408dd20df96d56e12, type: 3}
 --- !u!4 &877510902
 Transform:
   m_ObjectHideFlags: 0
