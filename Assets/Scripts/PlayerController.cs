@@ -17,11 +17,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        ins = upgradeValueHolder.instance;
         ShipAnimator = GetComponent<Animator>();
+        Debug.Log("checking for upgradeholder script");
+        ins = upgradeValueHolder.instance;
+        if (ins == null) Debug.Log("v1 null");
         ins.upgradeChanged += upgradeChanged;
         recalcValues();
     }
+
     // Update is called once per frame
     void Update()
     {
