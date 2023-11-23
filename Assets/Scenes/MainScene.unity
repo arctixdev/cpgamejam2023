@@ -458,22 +458,22 @@ MonoBehaviour:
   - diffuculty: 1
     groups: 2
     baseEnemySpawnTime: 10
-    maxTime: 20
+    maxTime: 100
     reward: 20
   - diffuculty: 2
     groups: 3
     baseEnemySpawnTime: 25
-    maxTime: 60
+    maxTime: 200
     reward: 40
   - diffuculty: 2
     groups: 4
     baseEnemySpawnTime: 45
-    maxTime: 90
+    maxTime: 200
     reward: 80
   - diffuculty: 3
     groups: 6
     baseEnemySpawnTime: 90
-    maxTime: 120
+    maxTime: 200
     reward: 100
 --- !u!4 &877510902
 Transform:
