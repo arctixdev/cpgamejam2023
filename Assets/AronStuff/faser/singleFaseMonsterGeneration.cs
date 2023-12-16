@@ -17,6 +17,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     [SerializeField]
     private GameObject astronuatController;
     float timer;
+    public static float publicTimer;
 
     [System.Serializable]
     public struct wave
@@ -61,6 +62,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 0);
             SceneManager.LoadScene("RoundWonScene");
         }
+        publicTimer = timer;
     }
     int curDiffuculty;
     float curBaseEnemySpawnTime;
