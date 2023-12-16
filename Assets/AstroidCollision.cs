@@ -24,7 +24,7 @@ public class AstroidCollision : MonoBehaviour
         if ((asteroidLayer.value & (1 << collision.collider.gameObject.layer)) != 0)
         {
             asteroidParticle.Play();
-            Invoke("DisableParticleEffect", 1f);
+            //Invoke("DisableParticleEffect", 1f);
         }
 
     }
