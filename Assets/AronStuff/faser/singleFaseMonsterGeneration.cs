@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -76,18 +78,14 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         List<(float, GameObject[])> ls = new List<(float, GameObject[])>();
         for (int i = 0; i < diffuculty*waves[waveDecider.Instance.currentWave].groups; i++)
         {
-            ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
-            ls.Sort(delegate ((float, GameObject[]) x, (float, GameObject[]) y)
-            {
-                if (x.Item1 == y.Item1) return 0;
-                if (x.Item1 < y.Item1) return -1;
-                if (x.Item1 > y.Item1) return 1;
-                else return 0;
-            });
-            timeLine = new Queue<(float, GameObject[])>(ls);
-            timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
+            ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(UnityEngine.Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
         }
+        ls = ls.OrderBy(item => item.Item1).ToList();
+        timeLine = new Queue<(float, GameObject[])>(ls);
+        timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
     }
+
+    
     public void initiateFase(wave wave)
     {
         initiateFase(wave.diffuculty, wave.baseEnemySpawnTime, wave.maxTime);
@@ -107,7 +105,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         GameObject[] gma = new GameObject[size];
         for (int i = 0; i < size; i++)
         {
-            gma[i] = fill[Random.Range(0,fill.Length-1)];
+            gma[i] = fill[UnityEngine.Random.Range(0,fill.Length-1)];
         }
         return gma;
     }
