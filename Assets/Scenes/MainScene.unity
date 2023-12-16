@@ -1925,13 +1925,98 @@ MonoBehaviour:
   - diffuculty: 2
     groups: 3
     baseEnemySpawnTime: 25
-    maxTime: 200
+    maxTime: 120
     reward: 40
   - diffuculty: 2
     groups: 4
     baseEnemySpawnTime: 45
-    maxTime: 200
+    maxTime: 120
     reward: 80
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 120
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 120
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
+  - diffuculty: 3
+    groups: 6
+    baseEnemySpawnTime: 90
+    maxTime: 200
+    reward: 100
   - diffuculty: 3
     groups: 6
     baseEnemySpawnTime: 90
