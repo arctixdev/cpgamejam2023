@@ -1,3 +1,6 @@
+# Coding pirates gamejam 2023, by TSDT. 
+## Winner of best overall game
+
 Link til spil: https://play.unity.com/mg/other/webgl-builds-378714
 Gruppe nummer: 16
 
