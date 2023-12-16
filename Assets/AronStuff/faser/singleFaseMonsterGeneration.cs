@@ -45,18 +45,21 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.childCount == 0 && timeLine.Count < 2)
+        {
+            // we only have enemys as children
+            // so no children = we have won
+            giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
+            SceneManager.LoadScene("RoundWonScene");
+        }
         timer += Time.deltaTime;
         if(timer>timeLine.Peek().Item1)
         {
-            if(timeLine.Count < 2)
-            {
-                giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
-                SceneManager.LoadScene("RoundWonScene");
-            }
             GameObject[] gm = timeLine.Dequeue().Item2;
             Debug.Log(gm.Length);
             Debug.Log(gm);
             if (!mES) mES = ModyfiedEnemySpawner.Instance;
+            // spawn the wave
             mES.SpawnEnemies(gm, (1f - (curDiffuculty / 3), 3f - (curDiffuculty / 3)), parrent);
         }
         if(transform.childCount < 1 && timer > curMaxTime)
@@ -65,7 +68,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
             SceneManager.LoadScene("RoundWonScene");
         }
         publicTimer = timer;
-    }
+    }   
     int curDiffuculty;
     float curBaseEnemySpawnTime;
     float curMaxTime;
