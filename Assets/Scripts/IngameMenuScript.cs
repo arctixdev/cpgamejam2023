@@ -21,7 +21,7 @@ public class IngameMenuScript : MonoBehaviour
     }
 
     void Update() {
-        timerText.text = "Time: " + Mathf.FloorToInt(Time.timeSinceLevelLoad*10).ToString();
+        timerText.text = "Time: " + Mathf.FloorToInt(singleFaseMonsterGeneration.publicTimer).ToString();
         if (Input.GetKeyDown(KeyCode.Escape) ) {
             ToggleMenu();
         }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +19,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     [SerializeField]
     private GameObject astronuatController;
     float timer;
+    public static float publicTimer;
 
     [System.Serializable]
     public struct wave
@@ -42,26 +45,30 @@ public class singleFaseMonsterGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.childCount == 0 && timeLine.Count < 2)
+        {
+            // we only have enemys as children
+            // so no children = we have won
+            giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
+            SceneManager.LoadScene("RoundWonScene");
+        }
         timer += Time.deltaTime;
         if(timer>timeLine.Peek().Item1)
         {
-            if(timeLine.Count < 2)
-            {
-                giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 20);
-                SceneManager.LoadScene("RoundWonScene");
-            }
             GameObject[] gm = timeLine.Dequeue().Item2;
             Debug.Log(gm.Length);
             Debug.Log(gm);
             if (!mES) mES = ModyfiedEnemySpawner.Instance;
+            // spawn the wave
             mES.SpawnEnemies(gm, (1f - (curDiffuculty / 3), 3f - (curDiffuculty / 3)), parrent);
         }
-        if(transform.childCount < 1 && timer > 10)
+        if(transform.childCount < 1 && timer > curMaxTime)
         {
             giveEndReward(waves[waveDecider.Instance.currentWave].reward, astronuatController, 0);
             SceneManager.LoadScene("RoundWonScene");
         }
-    }
+        publicTimer = timer;
+    }   
     int curDiffuculty;
     float curBaseEnemySpawnTime;
     float curMaxTime;
@@ -74,18 +81,14 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         List<(float, GameObject[])> ls = new List<(float, GameObject[])>();
         for (int i = 0; i < diffuculty*waves[waveDecider.Instance.currentWave].groups; i++)
         {
-            ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
-            ls.Sort(delegate ((float, GameObject[]) x, (float, GameObject[]) y)
-            {
-                if (x.Item1 == y.Item1) return 0;
-                if (x.Item1 < y.Item1) return -1;
-                if (x.Item1 > y.Item1) return 1;
-                else return 0;
-            });
-            timeLine = new Queue<(float, GameObject[])>(ls);
-            timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
+            ls.Add((UnityEngine.Random.Range(0, baseEnemySpawnTime), fillArray(UnityEngine.Random.Range(1 * diffuculty, 5 * diffuculty), enemies)));
         }
+        ls = ls.OrderBy(item => item.Item1).ToList();
+        timeLine = new Queue<(float, GameObject[])>(ls);
+        timeLine.Enqueue((maxTime, new GameObject[] { loadNextScene } ));
     }
+
+    
     public void initiateFase(wave wave)
     {
         initiateFase(wave.diffuculty, wave.baseEnemySpawnTime, wave.maxTime);
@@ -105,7 +108,7 @@ public class singleFaseMonsterGeneration : MonoBehaviour
         GameObject[] gma = new GameObject[size];
         for (int i = 0; i < size; i++)
         {
-            gma[i] = fill[Random.Range(0,fill.Length-1)];
+            gma[i] = fill[UnityEngine.Random.Range(0,fill.Length-1)];
         }
         return gma;
     }

@@ -33,16 +33,19 @@ public class PlayerController : MonoBehaviour
     {
         if (debug) Debug.Log(calculatedPlayerSpeed);
         // Movement
-        if (Input.GetKey(KeyCode.W)) {
-            playerRigidbody.AddForce(transform.up * calculatedPlayerSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+            playerRigidbody.AddForce(Vector2.up * calculatedPlayerSpeed * Time.deltaTime);
             ShipAnimator.SetTrigger("StartButton");
             ShipAnimator.SetBool("IsActive", true);
-        } if (Input.GetKey(KeyCode.A)) {
-            playerRigidbody.AddForce(-transform.right * calculatedPlayerSpeed * Time.deltaTime);
-        } if (Input.GetKey(KeyCode.D)) {
-            playerRigidbody.AddForce(transform.right * calculatedPlayerSpeed * Time.deltaTime);
-        } if (Input.GetKey(KeyCode.S)) {
-            playerRigidbody.AddForce(-transform.up * calculatedPlayerSpeed * Time.deltaTime);
+        } 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            playerRigidbody.AddForce(-Vector2.right * calculatedPlayerSpeed * Time.deltaTime);
+        } 
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            playerRigidbody.AddForce(Vector2.right * calculatedPlayerSpeed * Time.deltaTime);
+        } 
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+            playerRigidbody.AddForce(-Vector2.up * calculatedPlayerSpeed * Time.deltaTime);
         }
         
 		//rotation
