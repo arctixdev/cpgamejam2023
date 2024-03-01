@@ -9,14 +9,14 @@ Menneskehedden er i krig mod de korrupte bitaliens som vil udrydde menneskehedde
 Held og lykke!
 
 Features:
-Banerne er procedurally generated.
-Der er et fuldt ui system med hud, og menuer (Både start og ingame og slut osv)
-Du kan opgradere dit rumskib for at kunne flyve eller skyde hurtigere
-Minimap
-Enemy AI
-Phase system til at håndtere levels
-Selvlavet grafik, kode, lyd og andre assets
-Og meget mere.. 
+- Banerne er procedurally generated.
+- Der er et fuldt ui system med hud, og menuer (Både start og ingame og slut osv)
+- Du kan opgradere dit rumskib for at kunne flyve eller skyde hurtigere
+- Minimap
+- Enemy AI
+- Phase system til at håndtere levels
+- Selvlavet grafik, kode, lyd og andre assets
+- Og meget mere.. 
 
 Controls: 
 Du kontrollere dit rumskib ved at pege med musen hvilken vej det skal skyde/flyve og så kan du bruge WASD til at bevæge dig frem og tilbage i forhold til musen.
